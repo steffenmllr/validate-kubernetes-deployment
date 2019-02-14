@@ -12,6 +12,6 @@ workflow "Test and Lint on Push" {
 #--------------------------------------------------------------
 # Linting
 #--------------------------------------------------------------
-action "Lint golang api" {
+action "Lint" {
   uses = "./.github/actions/lint"
 }
