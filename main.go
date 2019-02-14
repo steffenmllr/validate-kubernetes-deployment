@@ -17,7 +17,7 @@ type config struct {
 	Link        string        `env:"LINK"`
 	Namespace   string        `env:"NAMESPACE,required"`
 	Deployments []string      `env:"DEPLOYMENTS,required" envSeparator:","`
-	Timout      time.Duration `env:"TIMEOUT" envDefault:"1s"`
+	Timout      time.Duration `env:"TIMEOUT" envDefault:"60s"`
 	SlackUrl    string        `env:"SLACK_HOOK_URL"`
 }
 
