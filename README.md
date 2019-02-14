@@ -41,3 +41,6 @@ DEPLOYMENTS=backend,frontend \
 ./validate
 
 ```
+
+### Preview
+![Preview](./.github/sample.png)
