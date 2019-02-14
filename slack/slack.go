@@ -99,6 +99,7 @@ type Attachment struct {
 type Message struct {
 	ResponseType string        `json:"response_tyoe,omitempty"`
 	Text         string        `json:"text,omitempty"`
+	Pretext      string        `json:"pretext,omitempty"`
 	Channel      string        `json:"channel,omitempty"`
 	Color        string        `json:"color,omitempty"`
 	Username     string        `json:"username,omitempty"`
@@ -106,6 +107,8 @@ type Message struct {
 	IconEmoji    string        `json:"icon_emoji,omitempty"`
 	UnfurlLinks  bool          `json:"unfurl_links,omitempty"`
 	LinkNames    string        `json:"link_names,omitempty"`
+	Footer       string        `json:"footer,omitempty"`
+	FooterIcon   string        `json:"footer_icon,omitempty"`
 	Attachments  []*Attachment `json:"attachments,omitempty"`
 }
 

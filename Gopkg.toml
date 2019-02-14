@@ -36,3 +36,7 @@
 [[constraint]]
   name = "github.com/caarlos0/env"
   version = "3.5.0"
+
+[[constraint]]
+  name = "github.com/tidwall/gjson"
+  version = "1.1.5"

@@ -12,3 +12,6 @@
 *.out
 vendor
 .DS_Store
+.envrc
+pushCommit.json
+pushTag.json
