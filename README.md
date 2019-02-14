@@ -3,10 +3,10 @@
 > Validates kubernetes deployments and (optional) sends message to slack
 
 ### Github Action
-```
+```hcl
 action "Validate K8s Deployment" {
   uses = "steffenmllr/validate-kubernetes-deployment/action@master"
-  secrets = ["SLACK_HOOK_URL]
+  secrets = ["SLACK_HOOK_URL"]
   env = {
     KUBECONFIG  = "/path/to/KUBECONFIG/within/workspace",
     NAMESPACE   = "staging",
@@ -18,9 +18,9 @@ action "Validate K8s Deployment" {
 
 ### Docker Usage
 ```bash
-docker run -it
+docker run -it \
 -v path/to/kubeconfig.conf:/kubeconfig.conf \
--e KUBECONFIG=/kubeconfig.conf
+-e KUBECONFIG=/kubeconfig.conf \
 -e LINK="https://github.com/steffenmllr/validate-kubernetes-deployment/commit/ed96dd695757e272cb5fdddd4262b77f012e6486" \
 -e NAME="steffenmllr/validate-kubernetes-deployment v1.1.10" \
 -e SLACK_HOOK_URL="https://hooks.slack.com/services/XXXX" \

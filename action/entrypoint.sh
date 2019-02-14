@@ -11,7 +11,7 @@ if [ -z "${LINK}" ]; then
 fi
 
 if [ -z "${NAME}" ]; then
-  export NAME= $(cat /github/workflow/event.json | jq '.repository.full_name') + $(cat /github/workflow/event.json | jq '.ref')
+  export NAME= $(cat /github/workflow/event.json | jq '.repository.full_name')
 fi
 
 ./validate
