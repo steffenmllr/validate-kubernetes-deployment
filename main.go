@@ -129,7 +129,7 @@ func main() {
 		if errGetName == nil {
 
 			for _, container := range apiDeployment.Spec.Template.Spec.Containers {
-				images = append(images, container.Image)
+				images = append(images, fmt.Sprintf("%s: %s", container.Name, container.Image))
 			}
 			revision := apiDeployment.GetAnnotations()["deployment.kubernetes.io/revision"]
 			footer = fmt.Sprintf("Replica Count: %d - Revision: %s", apiDeployment.Status.ReadyReplicas, revision)
@@ -148,11 +148,12 @@ func main() {
 				Color:  "good",
 				Footer: footer,
 				Title:  fmt.Sprintf("✔️️️ %s / %s", cfg.Namespace, deployment),
-				Text:   fmt.Sprintf(strings.Join(images[:], ",")),
+				Text:   fmt.Sprintf(strings.Join(images[:], "\n")),
 			})
 		}
 	}
 
+	// Damn it golang is verbose
 	var Color string
 	if deploymentSuccess {
 		Color = "good"
@@ -176,4 +177,6 @@ func main() {
 	if !deploymentSuccess {
 		os.Exit(1)
 	}
+
+	os.Exit(0)
 }

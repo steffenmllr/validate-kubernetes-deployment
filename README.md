@@ -3,6 +3,8 @@
 > Validates kubernetes deployments and (optional) sends message to slack, exits with a non-zero status code if the deployment is not valid
 
 ### Github Action
+You can either pass in a path to your `KUBECONFIG` (Tipp: Save it in your repo and encrypt it with [git-crypt](https://github.com/AGWA/git-crypt))
+
 ```hcl
 action "Validate K8s Deployment" {
   uses = "docker://steffenmllr/validate-kubernetes-deployment:latest"
@@ -15,6 +17,21 @@ action "Validate K8s Deployment" {
 }
 
 ```
+
+Or you can pass in `KUBE_CONFIG_DATA` via SECRETS as base64 encoded [like in the aws action example](https://github.com/actions/aws/tree/master/kubectl#secrets)
+
+```hcl
+action "Validate K8s Deployment" {
+  uses = "docker://steffenmllr/validate-kubernetes-deployment:latest"
+  secrets = ["SLACK_HOOK_URL", "KUBE_CONFIG_DATA]
+  env = {
+    NAMESPACE   = "staging",
+    DEPLOYMENTS = "backend,frontend"
+  }
+}
+
+```
+
 
 ### Docker Usage
 ```bash

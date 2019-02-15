@@ -22,5 +22,6 @@ LABEL com.github.actions.color="blue"
 
 COPY --from=buildImage /go/src/github.com/steffenmllr/validate-kubernetes-deployment/validate ./validate
 RUN chmod +x ./validate
+COPY entrypoint.sh /entrypoint.sh
 
-CMD ["/validate"]
+CMD ["/entrypoint.sh"]
