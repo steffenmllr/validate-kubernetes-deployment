@@ -5,7 +5,7 @@
 ### Github Action
 ```hcl
 action "Validate K8s Deployment" {
-  uses = "steffenmllr/validate-kubernetes-deployment@master"
+  uses = "docker://steffenmllr/validate-kubernetes-deployment:latest"
   secrets = ["SLACK_HOOK_URL"]
   env = {
     KUBECONFIG  = "/path/to/KUBECONFIG/within/workspace",
