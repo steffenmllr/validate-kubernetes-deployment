@@ -16,9 +16,6 @@ import (
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-type GithubPushAction struct {
-}
-
 type config struct {
 	Name            string        `env:"NAME"`
 	Namespace       string        `env:"NAMESPACE,required"`
@@ -148,7 +145,7 @@ func main() {
 				Color:  "good",
 				Footer: footer,
 				Title:  fmt.Sprintf("✔️️️ %s / %s", cfg.Namespace, deployment),
-				Text:   fmt.Sprintf(strings.Join(images[:], "\n")),
+				Text:   fmt.Sprint(strings.Join(images[:], "\n")),
 			})
 		}
 	}
