@@ -1,4 +1,4 @@
-# validate-kubernetes-deployment ![https://cloud.docker.com/u/steffenmllr/repository/docker/steffenmllr/steffenmllr/validate-kubernetes-deployment](https://img.shields.io/docker/automated/steffenmllr/validate-kubernetes-deployment.svg?style=flat-square)
+# validate-kubernetes-deployment [![](https://images.microbadger.com/badges/image/steffenmllr/validate-kubernetes-deployment.svg)](https://hub.docker.com/r/steffenmllr/validate-kubernetes-deployment/ "This image on Docker Hub")
 
 > Validates kubernetes deployments and (optional) sends message to slack, exits with a non-zero status code if the deployment is not valid
 
