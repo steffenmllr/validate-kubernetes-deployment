@@ -118,7 +118,7 @@ func main() {
 
 	// Check deployments
 	for _, deployment := range cfg.Deployments {
-		errRollout := rollout.TrackDeploymentTillReady(deployment, cfg.Namespace, kube.Kubernetes, tracker.Options{Timeout: cfg.Timout * time.Second})
+		errRollout := rollout.TrackDeploymentTillReady(deployment, cfg.Namespace, kube.Kubernetes, tracker.Options{Timeout: cfg.Timout})
 		apiDeployment, errGetName := kube.Kubernetes.ExtensionsV1beta1().Deployments(cfg.Namespace).Get(deployment, v1.GetOptions{})
 		var images []string
 		footer := ""

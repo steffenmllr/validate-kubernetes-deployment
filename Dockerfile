@@ -1,5 +1,5 @@
 # Stage 1: Build executable
-FROM golang:1.11 as buildImage
+FROM golang:1.14 as buildImage
 
 # We start with migrate so this gets cached most of the time
 RUN go get -u github.com/golang/dep/cmd/dep
